@@ -25,5 +25,21 @@ class ClientesController extends Controller
         return view('clientes.cadastrar',$retorno);
     }
 
+    function editar(){
+
+        echo 'Editar';
+        exit;
+    }
+
+    function visualizar(){
+        echo'Visualizar';
+        exit;
+    }
+
+    function deletar(){
+        echo 'Deletar';
+        exit;
+    }
+
 }
 
