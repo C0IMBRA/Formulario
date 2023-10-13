@@ -5,10 +5,19 @@ use Illuminate\Support\Facades\Route;
 // sempre seguir a padrão abaixo
 
 Route::get('/clientes', app()->getNamespace() . 'Http\Controllers\ClientesController@index')->name('clientes.index');
-Route::get('/clientes/cadastrar', app()->getNamespace() . 'Http\Controllers\ClientesController@cadastrar')->name('clientes.cadastrar');
-Route::get('/clientes/editar', app()->getNamespace() . 'Http\Controllers\ClientesController@editar')->name('clientes.editar');
-Route::get('/clientes/deletar', app()->getNamespace() . 'Http\Controllers\ClientesController@deletar')->name('clientes.deletar');
-Route::get('/clientes/visualizar', app()->getNamespace() . 'Http\Controllers\ClientesController@visualizar')->name('clientes.visualizar');
+Route::get('/clientes/adicionar', app()->getNamespace() . 'Http\Controllers\ClientesController@adicionar')->name('clientes.adicionar');
+Route::get('/clientes/editar/{id}', app()->getNamespace() . 'Http\Controllers\ClientesController@editar')->name('clientes.editar');
+Route::get('/clientes/deletar/{id}', app()->getNamespace() . 'Http\Controllers\ClientesController@deletar')->name('clientes.deletar');
+Route::get('/clientes/visualizar/{id}', app()->getNamespace() . 'Http\Controllers\ClientesController@visualizar')->name('clientes.visualizar');
+
+Route::post('/clientes/editar_dados/{id}', app()->getNamespace() . 'Http\Controllers\ClientesController@editarDados');
+Route::post('/clientes/adicionar', app()->getNamespace() . 'Http\Controllers\ClientesController@adicionar');
+
+
+
+
+
+
 
 
 

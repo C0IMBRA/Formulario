@@ -1,42 +1,47 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Cliente;
 
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
 {
-    function index(){
-        echo 'Index';
-        exit;
-
+    public function index(){
+        $Cliente = new Cliente;
+        $retorno['clientes'] = $Cliente->index();
+        return view('clientes.index', $retorno);
+        
     }
 
-    function cadastrar(){
-        $retorno = [];
-        $retorno['carros'] = [
-            'Fiat',
-            'Honda',
-            'Toyota',
-            'Chevrolet'
-            
-        ];
-
-        return view('clientes.cadastrar',$retorno);
+    public function editarDados(request $dados, $id){
+        $Cliente = new Cliente;
+        $Cliente->editar($dados->input(), $id);
+        return redirect()->route('clientes.index');
     }
 
-    function editar(){
-
-        echo 'Editar';
-        exit;
+    public function adicionar(request $post){   
+        if($post->isMethod('POST')){
+            $Cliente = new Cliente;
+            $Cliente->adicionar($post->input());
+            return redirect()->route('clientes.index');
+        }
+        return view('clientes.adicionar');
     }
 
-    function visualizar(){
-        echo'Visualizar';
-        exit;
+    public function editar($id){
+        $Cliente = new Cliente;
+        $retorno['cliente'] = $Cliente->visualizar($id);
+        return view('clientes.editar', $retorno);
     }
 
-    function deletar(){
+    public function visualizar($id){
+        $Cliente = new Cliente;
+        $retorno['cliente'] = $Cliente->visualizar($id);
+        return view('clientes.visualizar', $retorno);
+    }
+
+    public function deletar(){
         echo 'Deletar';
         exit;
     }
