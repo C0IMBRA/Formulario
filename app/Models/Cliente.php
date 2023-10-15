@@ -25,8 +25,6 @@ class Cliente extends Model
         $editar = self::find($id);
         if(!empty($editar)){
             unset($dados['_token']);
-            // dd($dados);
-
             $editar->fill($dados);
             $editar->save();
             return 1;
@@ -36,5 +34,9 @@ class Cliente extends Model
         unset($dados['_token']);
         self::create($dados);
         return 1;
+    }
+    public function deletar($dados, $id){
+        $deletar = self::find($id);
+        $deletar->delete();
     }
 }
