@@ -35,7 +35,7 @@ class Cliente extends Model
         self::create($dados);
         return 1;
     }
-    public function deletar($dados, $id){
+    public function deletar($id){
         $deletar = self::find($id);
         $deletar->delete();
     }

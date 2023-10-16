@@ -41,9 +41,9 @@ class ClientesController extends Controller
         return view('clientes.visualizar', $retorno);
     }
 
-    public function deletar(request $dados, $id){
+    public function deletar($id){
         $Cliente = new Cliente;
-        $retorno['cliente']= $Cliente->deletar($dados->input(), $id);
+        $retorno['cliente']= $Cliente->deletar($id);
         return redirect()->route('clientes.index');
     }
 }
