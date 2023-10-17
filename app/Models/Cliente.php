@@ -14,7 +14,6 @@ class Cliente extends Model
         'saldo'
     ];
 
-
     public function index(){
         return self::get();
     }
@@ -27,16 +26,17 @@ class Cliente extends Model
             unset($dados['_token']);
             $editar->fill($dados);
             $editar->save();
-            return 1;
+            return "Cliente editado!";
         }
     }
     public function adicionar($dados){
         unset($dados['_token']);
         self::create($dados);
-        return 1;
+        return "Cliente cadastrado!";
     }
     public function deletar($id){
         $deletar = self::find($id);
         $deletar->delete();
+        return "Cliente excluido!";
     }
 }

@@ -18,6 +18,9 @@
         <label for="saldo">Saldo</label>
         <input type="text" name="saldo" value="">
         <br>
+        <label for="sexo">Sexo</label>
+        <input type="text" name="sexo" value="">
+        <br>
 
         <button type="submit">Enviar</button>
     </form>

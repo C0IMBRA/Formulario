@@ -7,7 +7,7 @@
     <title>Clientes - Editar</title>
 </head>
 <body>
-    <form action="\clientes/editar_dados/{{$cliente->id}}" method="POST">
+    <form action="\clientes/editar/{{$cliente->id}}" method="POST">
         @csrf
         <label for="nome">Nome</label>
         <input type="text" name="nome" value="{{$cliente->nome}}">
@@ -17,6 +17,9 @@
         <br>
         <label for="saldo">Saldo</label>
         <input type="text" name="saldo" value="{{$cliente->saldo}}">
+        <br>
+        <label for="sexo">Sexo</label>
+        <input type="text" name="sexo" value="{{$cliente->sexo}}">
         <br>
 
         <button type="submit">Enviar</button>

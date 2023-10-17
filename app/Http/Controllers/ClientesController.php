@@ -14,12 +14,6 @@ class ClientesController extends Controller
         
     }
 
-    public function editarDados(request $dados, $id){
-        $Cliente = new Cliente;
-        $Cliente->editar($dados->input(), $id);
-        return redirect()->route('clientes.index');
-    }
-
     public function adicionar(request $post){   
         if($post->isMethod('POST')){
             $Cliente = new Cliente;
@@ -29,7 +23,12 @@ class ClientesController extends Controller
         return view('clientes.adicionar');
     }
 
-    public function editar($id){
+    public function editar(request $dados, $id){
+        if($dados->isMethod('POST')){
+            $Cliente = new Cliente;
+            $Cliente->editar($dados->input(), $id);
+            return redirect()->route('clientes.index');
+        }
         $Cliente = new Cliente;
         $retorno['cliente'] = $Cliente->visualizar($id);
         return view('clientes.editar', $retorno);

@@ -10,7 +10,7 @@ Route::get('/clientes/editar/{id}', app()->getNamespace() . 'Http\Controllers\Cl
 Route::get('/clientes/deletar/{id}', app()->getNamespace() . 'Http\Controllers\ClientesController@deletar')->name('clientes.deletar');
 Route::get('/clientes/visualizar/{id}', app()->getNamespace() . 'Http\Controllers\ClientesController@visualizar')->name('clientes.visualizar');
 
-Route::post('/clientes/editar_dados/{id}', app()->getNamespace() . 'Http\Controllers\ClientesController@editarDados');
+Route::post('/clientes/editar/{id}', app()->getNamespace() . 'Http\Controllers\ClientesController@editar');
 Route::post('/clientes/adicionar', app()->getNamespace() . 'Http\Controllers\ClientesController@adicionar');
 
 
