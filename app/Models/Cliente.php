@@ -11,7 +11,8 @@ class Cliente extends Model
     protected $fillable = [
         'nome',
         'idade',
-        'saldo'
+        'saldo',
+        'sexo'
     ];
 
     public function index(){

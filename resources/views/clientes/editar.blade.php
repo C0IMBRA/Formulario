@@ -21,10 +21,7 @@
         <label for="sexo">Sexo</label>
         <input type="text" name="sexo" value="{{$cliente->sexo}}">
         <br>
-
         <button type="submit">Enviar</button>
-    </form>
-
-    
+    </form>    
 </body>
 </html>

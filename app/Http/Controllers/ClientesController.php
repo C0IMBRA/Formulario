@@ -18,7 +18,7 @@ class ClientesController extends Controller
         if($post->isMethod('POST')){
             $Cliente = new Cliente;
             $Cliente->adicionar($post->input());
-            return redirect()->route('clientes.index');
+            return redirect()->route('clientes.index')->with('mensagem', 'Cliente cadastrado!');
         }
         return view('clientes.adicionar');
     }
@@ -27,7 +27,7 @@ class ClientesController extends Controller
         if($dados->isMethod('POST')){
             $Cliente = new Cliente;
             $Cliente->editar($dados->input(), $id);
-            return redirect()->route('clientes.index');
+            return redirect()->route('clientes.index')->with('mensagem', 'Cliente editado!');
         }
         $Cliente = new Cliente;
         $retorno['cliente'] = $Cliente->visualizar($id);
@@ -43,7 +43,7 @@ class ClientesController extends Controller
     public function deletar($id){
         $Cliente = new Cliente;
         $retorno['cliente']= $Cliente->deletar($id);
-        return redirect()->route('clientes.index');
+        return redirect()->route('clientes.index', $retorno)->with('mensagem', 'Cliente excluido!');
     }
 }
 

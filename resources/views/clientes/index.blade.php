@@ -4,8 +4,12 @@
     <title>Clientes</title>
 </head>
 <body>
+    @if (session('mensagem'))
+        <div class="alert alert-success">
+            {{ session('mensagem') }}
+        </div>
+    @endif
     <h1>Lista de Clientes</h1>
-
     <a href="http://localhost:8000/clientes/adicionar"><button type="button" style="background-color: #28a745 ; color: white;">Adicionar</button></a> <br><br>
     <table border="1">   
         <tr>
@@ -16,7 +20,6 @@
             <td>Sexo</td>
             <td>Ações</td>
         <tr>
-
         @foreach($clientes as $cliente)
         <tr>
             <td>{{$cliente->id}}</td>
