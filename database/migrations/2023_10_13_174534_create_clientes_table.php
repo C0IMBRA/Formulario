@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nome'); // Campo Nome (string)
             $table->integer('idade'); // Campo Idade (int)
             $table->decimal('saldo', 10, 2); // Campo Saldo (number)
+            $table->string('sexo'); // Campo Nome (string)
             $table->timestamps(); // Campos de data/hora de criação e atualização
         });
     }

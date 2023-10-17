@@ -10,7 +10,9 @@
         </div>
     @endif
     <h1>Lista de Clientes</h1>
-    <a href="http://localhost:8000/clientes/adicionar"><button type="button" style="background-color: #28a745 ; color: white;">Adicionar</button></a> <br><br>
+    <a href="{{ route('clientes.adicionar') }}">
+        <button type="button" style="background-color: #28a745; color: white;">Adicionar</button>
+    </a> <br><br>  
     <table border="1">   
         <tr>
             <td>Codigo</td>
@@ -28,15 +30,15 @@
             <td>{{$cliente->saldo}}</td>
             <td>{{$cliente->sexo}}</td>
             <td>
-                <a href="http://localhost:8000/clientes/visualizar/{{$cliente->id}}">
-                    <button type="button" style="background-color: #17a2b8 ; color: white;" >Visualizar</button>
+                <a href="{{ route('clientes.visualizar', ['id' => $cliente->id]) }}">
+                    <button type="button" style="background-color: #17a2b8; color: white;">Visualizar</button>
                 </a>
-                <a href="http://localhost:8000/clientes/editar/{{$cliente->id}}">
-                    <button type="button" style="background-color: #ffc107 ; color: white;" >Editar</button>
+                <a href="{{ route('clientes.editar', ['id' => $cliente->id]) }}">
+                    <button type="button" style="background-color: #ffc107; color: white;">Editar</button>
                 </a>
-                <a href="http://localhost:8000/clientes/deletar/{{$cliente->id}}">
-                    <button type="button" style="background-color: #dc3545 ; color: white;">Deletar</button>
-                </a>
+                <a href="{{ route('clientes.deletar', ['id' => $cliente->id]) }}">
+                    <button type="button" style="background-color: #dc3545; color: white;">Deletar</button>
+                </a>                
             </td>
         <tr>
         @endforeach   

@@ -22,11 +22,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         DB::table('clientes')->insert([
-            ['nome' => 'Gabriel Coimbra',  'idade' => 22,'saldo' => 33320],
-            ['nome' => 'Paulo Saraiva',  'idade' => 45,'saldo' => 33.52],
-            ['nome' => 'Lucas',  'idade' => 45,'saldo' => 33.52],
-            ['nome' => 'Arthur',  'idade' => 32,'saldo' => 338.52],
-            ['nome' => 'Léo',  'idade' => 35,'saldo' => 3158.52],
+            ['nome' => 'Gabriel Coimbra',  'idade' => 22,'saldo' => 320, 'sexo' => 'Masculino'],
+            ['nome' => 'Paulo Saraiva',  'idade' => 45,'saldo' => 33.52, 'sexo' => 'Masculino'],
+            ['nome' => 'Lucas',  'idade' => 45,'saldo' => 33.52, 'sexo' => 'Masculino'],
+            ['nome' => 'Arthur',  'idade' => 32,'saldo' => 338.52, 'sexo' => 'Masculino'],
+            ['nome' => 'Léo',  'idade' => 35,'saldo' => 3158.52, 'sexo' => 'Masculino'],
+        
         ]);
     }
 }
